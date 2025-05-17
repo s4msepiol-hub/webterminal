@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: prime95
-        image: debian:latest
+        image: ubuntu:latest
         command: ["sleep", "infinity"]
         ports:
         - containerPort: 3050
