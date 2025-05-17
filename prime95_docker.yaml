@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: prime95-deployment
+  labels:
+    app: prime95
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: prime95
+  template:
+    metadata:
+      labels:
+        app: prime95
+    spec:
+      containers:
+      - name: prime95
+        image: debian:latest
+        ports:
+        - containerPort: 3050
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: prime95-service
+spec:
+  selector:
+    app: prime95
+  ports:
+    - protocol: TCP
+      port: 3050
+      targetPort: 3050
