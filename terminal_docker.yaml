@@ -19,6 +19,10 @@ spec:
         image: s4msepiol/terminal_docker:1.1
         ports:
         - containerPort: 3000
+      containers:
+      - name: sidecar
+        image: bitnami/kubectl:latest  # Sidecar with kubectl
+        command: ["/bin/sh", "-c", "sleep infinity"]
 ---
 apiVersion: v1
 kind: Service
