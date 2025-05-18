@@ -22,7 +22,7 @@ spec:
       containers:
       - name: sidecar
         image: bitnami/kubectl:latest  # Sidecar with kubectl
-        command: ["/bin/sh", "-c", "sleep infinity"]
+        #command: ["/bin/sh", "-c", "sleep infinity"]
 ---
 apiVersion: v1
 kind: Service
